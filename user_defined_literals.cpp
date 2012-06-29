@@ -33,29 +33,18 @@ typedef Value<Unit<0, 0, 2>> Second2;
 typedef Value<Unit<1, 0, -1>> Speed;
 typedef Value<Unit<1, 0, -2>> Acceleration;
 
-Second operator "" _s(long double d)
-{
-    return Second(d);
-}
- 
-Second2 operator"" _s2(long double d)
-{
-    return Second2(d);
-}
- 
-Meter operator "" _m(long double d)
-{
-    return Meter(d);
-}
+Second  operator ""  _s(long double d) { return  Second(d); }
+Second2 operator "" _s2(long double d) { return Second2(d); }
+Meter   operator ""  _m(long double d) { return   Meter(d); }
 
 template<class Value1, class Value2>
 Value<Unit<Value1::m()  - Value2::m(), 
            Value1::kg() - Value2::kg(),
            Value1::s()  - Value2::s()>> operator / (Value1 v1, Value2 v2)
 {
-    return Value<Unit<Value1::m()  - Value2::m(), 
-                      Value1::kg() - Value2::kg(),
-                      Value1::s()  - Value2::s()>>(v1.val / v2.val);
+  return Value<Unit<Value1::m()  - Value2::m(), 
+                    Value1::kg() - Value2::kg(),
+                    Value1::s()  - Value2::s()>>(v1.val / v2.val);
 }
 
 int main()
