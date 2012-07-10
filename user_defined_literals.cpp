@@ -1,10 +1,9 @@
-
 #include <iostream>
 
 // Working example of C++11 User-Defined Literals from Bjarne Stroustrup's
 // Software Development for Infrastructure
 
-// compiles: with g++ 4.7 using -std=c++0x
+// compiles with: g++ 4.7 using -std=c++0x
 
 template<int M, int K, int S> struct Unit{
   enum{m=M, kg=K, s=S};
